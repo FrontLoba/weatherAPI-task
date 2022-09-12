@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    padding: 25px 25px;
+    text-align: center;
+    font-family: 'Inter', Times, serif;
+    color: #ffffff;
+}
+
+main div {
+    /* border: 1px solid black; */
+    width: 350px;
+    height: 100%;
+    padding: 30px 20px;
+    margin-top: 2%;
+    border-radius: 10px;
+}
+
+.daytime {
+    background: linear-gradient(18.04deg, #F1B14B -0.75%, #BC2C35 100%);
+}
+
+.mid-day {
+    background: linear-gradient(18.04deg, #4BB5F1 -0.75%, #2F2CBC 100%);
+}
+
+.dark-time {
+    background: linear-gradient(18.04deg, #223076 -0.75%, #06050E 100%);
+}
+
+h1 {
+    font-weight: bold;
+    font-size: 36px;
+
+}
+
+p {
+    font-weight: 400;
+    font-size: 22px;
+    margin-top: 20px;
+}
+
+.hero {
+    width: 100%;
+    height: auto;
+    max-width: 200px;
+    margin-top: 5px;
+}
+
+.digit {
+    font-weight: 700;
+    font-size: 72px;
+    margin-top: 10px;
+}
+
+.date {
+    font-weight: 400;
+    font-size: 22px;
+    margin-top: 15px;
+}
+
+table {
+    width: 100%;
+    margin-top: 50px;
+    text-align: left;
+    line-height: 30px;
+    border-collapse: collapse;
+    /* border-color: #ffffff; */
+}
+table tr td {
+    border-bottom: 1px solid #ffffff;
+    border-top: 1px solid #ffffff;
+    padding: 5px;
+}
