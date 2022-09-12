@@ -1,7 +1,12 @@
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body {
+    background-color: #06050E;
 }
 
 main {
@@ -24,28 +29,32 @@ main div {
     border-radius: 10px;
 }
 
-.daytime {
+/* .daytime {
     background: linear-gradient(18.04deg, #F1B14B -0.75%, #BC2C35 100%);
 }
 
-.mid-day {
+.daytime {
     background: linear-gradient(18.04deg, #4BB5F1 -0.75%, #2F2CBC 100%);
-}
+} */
 
-.dark-time {
+.daytime {
     background: linear-gradient(18.04deg, #223076 -0.75%, #06050E 100%);
+    box-shadow: 1px 1px 10px #ffffff;
 }
 
 h1 {
     font-weight: bold;
-    font-size: 36px;
+    font-size: 50px;
 
 }
 
-p {
+.degree {
+    display: flex;
+    justify-content: center;
+    font-size: 57px;
+    align-items: center;
+    margin-top: -40px;
     font-weight: 400;
-    font-size: 22px;
-    margin-top: 20px;
 }
 
 .hero {
@@ -58,13 +67,19 @@ p {
 .digit {
     font-weight: 700;
     font-size: 72px;
-    margin-top: 10px;
 }
 
 .date {
-    font-weight: 400;
-    font-size: 22px;
-    margin-top: 15px;
+    font-size: 16px;
+}
+.description {
+    margin-top: 20px;
+    font-size: 20px;
+}
+
+.fa-solid {
+    color: white;
+    font-size: 20px;
 }
 
 table {
@@ -73,7 +88,6 @@ table {
     text-align: left;
     line-height: 30px;
     border-collapse: collapse;
-    /* border-color: #ffffff; */
 }
 table tr td {
     border-bottom: 1px solid #ffffff;

@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Current weather</title>
     <link rel="stylesheet" href="style.css" type="text/css" />
+
 </head>
 <body>
 <main>
@@ -14,45 +15,58 @@
         <h1 class="cur-state">San Franscisco</h1>
         <p class="description">Clear</p>
         <img class="hero" id="wicon" src="" alt="weather icon">
-        <h2 class="digit">11</h2>
+        <div class="degree">
+            <h2 class="digit">11</h2>
+            <span id="deg-unit">&deg;C</span>
+        </div>
         <p class="date" id="date-time"></p>
-
         <table>
+            <tr>
+                <td class="day">Latitude</td>
+                <td class="cloud-icon" id="cloud-sign">
+                    <img src="" alt="">
+                </td>
+                <td id="lat">10</td>
+            </tr>
+            <tr>
+                <td class="day">Longitude</td>
+                <td class="cloud-icon" id="cloud-sign">
+                    <img src="" alt="">
+                </td>
+                <td id="lon">10</td>
+            </tr>
             <tr>
                 <td class="day" id="day">Temp Max</td>
                 <td class="cloud-icon" id="cloud-sign">
-                    <img src="" alt="">
+                    <i class="fa-light fa-temperature-arrow-up"></i>
                 </td>
                 <td class="temp-max">10</td>
-                <td>10</td>
             </tr>
 
             <tr>
-                <td class="day" id="day">Monday</td>
+                <td class="day" id="day">Temp Mini</td>
                 <td class="cloud-icon" id="cloud-sign">
-                    <img src="" alt="">
+                    <i class="fa-light fa-temperature-arrow-down"></i>
                 </td>
                 (<td class="temp-min">10</td>
-                <td>10</td>
             </tr>
 
             
             <tr>
-                <td class="day" id="day">Tuesday</td>
+                <td class="day" id="day">Humidity</td>
                 <td class="cloud-icon" id="cloud-sign">
                     <img src="" alt="">
                 </td>
-                <td>10</td>
-                <td>10</td>
+                <td id="humidity">10</td>
             </tr>
             
             <tr>
-                <td class="day" id="day">Wednesday</td>
+                <td class="day" id="day">Country</td>
                 <td class="cloud-icon" id="cloud-sign">
                     <img src="" alt="">
                 </td>
-                <td>10</td>
-                <td>10</td>
+                <td id="country">10</td>
+               
             </tr>
 
         </table>
