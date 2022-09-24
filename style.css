@@ -1,12 +1,17 @@
-
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body {
-    background-color: #06050E;
+    /* width: 100vw; */
+    /* height: 100vh; */
+    background-image: url(./tree.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
 }
 
 main {
@@ -16,7 +21,6 @@ main {
     
     padding: 25px 25px;
     text-align: center;
-    font-family: 'Inter', Times, serif;
     color: #ffffff;
 }
 
@@ -32,15 +36,18 @@ main div {
 /* .daytime {
     background: linear-gradient(18.04deg, #F1B14B -0.75%, #BC2C35 100%);
 }
-
-.daytime {
-    background: linear-gradient(18.04deg, #4BB5F1 -0.75%, #2F2CBC 100%);
+*/
+/* .daytime {
+    background: linear-gradient(18.04deg, #4BB5F1 -0.75%, #2F2CBC 100%) ;
+    opacity: 0.8;
 } */
 
 .daytime {
-    background: linear-gradient(18.04deg, #223076 -0.75%, #06050E 100%);
-    box-shadow: 1px 1px 10px #ffffff;
+    background: linear-gradient(18.04deg, #227622 -0.75%, #050e06 100%);
+    box-shadow: 1px 1px 10px #b3faa1;
+    opacity: 0.8;
 }
+
 
 h1 {
     font-weight: bold;
