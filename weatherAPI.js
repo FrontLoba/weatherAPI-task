@@ -2,7 +2,7 @@ const main = document.querySelector('main');
 const dayTime = document.querySelector('#morning');
 
 const dayWatch = new Date();
-const liveDate = new Intl.DateTimeFormat('en-GB').format(now);
+const liveDate = new Intl.DateTimeFormat('en-GB').format(dayWatch);
 const day = dayWatch.getDate();
 const month = dayWatch.getMonth() + 1;
 const year = dayWatch.getFullYear();
