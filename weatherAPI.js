@@ -2,6 +2,7 @@ const main = document.querySelector('main');
 const dayTime = document.querySelector('#morning');
 
 const dayWatch = new Date();
+const liveDate = new Intl.DateTimeFormat('en-GB').format(now);
 const day = dayWatch.getDate();
 const month = dayWatch.getMonth() + 1;
 const year = dayWatch.getFullYear();
@@ -39,8 +40,7 @@ function displayWeather(position) {
       let x = data.main.temp - 273;
       let tmax = data.main.temp_max - 273;
       let tmin = data.main.temp_min - 273;
-      const html = `
-      
+      const html = `      
       <h1 class="cur-state">${data.name}</h1>
       <p class="description">${data.weather[0].main}</p>
       <img class="hero" id="wicon" src=${`http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`} alt="weather icon">
@@ -50,7 +50,7 @@ function displayWeather(position) {
                 &#8451;
             </span>
         </div>
-        <p class="date" id="date-time">${day}/${month}/${year} ${hour}:${minute}</p>
+        <p class="date" id="date-time">${liveDate}</p>
          
         <table>
             <tr>
