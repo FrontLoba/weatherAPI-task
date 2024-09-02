@@ -2,7 +2,19 @@ const main = document.querySelector('main');
 const dayTime = document.querySelector('#morning');
 
 const dayWatch = new Date();
-const liveDate = new Intl.DateTimeFormat('en-GB').format(dayWatch);
+const locale = navigator.language;
+console.log(locale);
+const option = {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+  Weekday: 'long',
+  hour: 'numeric',
+  minute: 'numeric',
+  second: 'numeric',
+};
+const liveDate = new Intl.DateTimeFormat(locale, option).format(dayWatch);
+
 const day = dayWatch.getDate();
 const month = dayWatch.getMonth() + 1;
 const year = dayWatch.getFullYear();
@@ -70,7 +82,10 @@ function displayWeather(position) {
             <tr>
                 <td class="day" id="day">Temp Max</td>
                 <td class="cloud-icon" id="cloud-sign">
-                    <i class="fa-light fa-temperature-arrow-up"></i>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="yellow" viewBox="0 0 24 24" stroke-width="3.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+                    </svg>
+
                 </td>
                 <td class="temp-max">${tmax.toFixed(2)}</td>
             </tr>
