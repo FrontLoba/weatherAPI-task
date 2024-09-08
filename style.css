@@ -34,10 +34,12 @@ main {
 }
 .night {
   padding: 20px;
-  background: linear-gradient(18.04deg, #081b08 -0.75%, #6d6d6d 100%);
-  box-shadow: 1px 1px 10px #565756;
-  opacity: 0.9;
+  /* background: linear-gradient(18.04deg, #081b08 -0.75%, #6d6d6d 100%); */
+
+  box-shadow: 1px 1px 10px #111111;
+  opacity: 0.8;
   border-radius: 12px;
+  color: white;
 }
 
 h1 {

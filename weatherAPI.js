@@ -99,6 +99,7 @@ function renderDetail(data) {
 
   if (hour > '17') {
     dayTime.classList.add('night');
+    main.style.backgroundImage = 'url(night-time.jpg)';
     dayTime.classList.remove('daytime');
   }
 }
