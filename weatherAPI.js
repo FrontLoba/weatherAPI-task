@@ -6,9 +6,9 @@ const locale = navigator.language;
 
 const option = {
   year: 'numeric',
-  month: 'long',
+  month: 'short',
   day: 'numeric',
-  Weekday: 'long',
+  Weekday: 'short',
   hour: 'numeric',
   minute: 'numeric',
   second: 'numeric',
