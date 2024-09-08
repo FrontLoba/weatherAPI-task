@@ -3,7 +3,7 @@ const dayTime = document.querySelector('#morning');
 
 const dayWatch = new Date();
 const locale = navigator.language;
-console.log(locale);
+
 const option = {
   year: 'numeric',
   month: 'long',
@@ -28,31 +28,11 @@ let apiCall =
 
 // dateFormat.textContent = `${day}/${month}/${year} ${hour}:${minute}`
 
-function getUserLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(displayWeather);
-  } else {
-    alert('The browser does not support geolocation');
-  }
-}
-
-function displayWeather(position) {
-  const { latitude, longitude } = position.coords;
-
-  // const latPost = position.coords.latitude;
-  // const longPost = position.coords.longitude;
-
-  fetch(`${baseURL}lat=${latitude}&lon=${longitude}&appid=${apiKey}`)
-    .then((res) => res.json())
-    .then((data) => {
-      JSON.stringify(data);
-      console.log(data);
-
-      //   state.textContent = data.name;
-      let x = data.main.temp - 273;
-      let tmax = data.main.temp_max - 273;
-      let tmin = data.main.temp_min - 273;
-      const html = `      
+function renderDetail(data) {
+  let x = data.main.temp - 273;
+  let tmax = data.main.temp_max - 273;
+  let tmin = data.main.temp_min - 273;
+  const html = `      
       <h1 class="cur-state">${data.name}</h1>
       <p class="description">${data.weather[0].main}</p>
       <img class="hero" id="wicon" src=${`http://openweathermap.org/img/wn/${data.weather[0].icon}@4x.png`} alt="weather icon">
@@ -114,16 +94,47 @@ function displayWeather(position) {
             </tr>
 
         </table>
-      `;
+    `;
+  dayTime.insertAdjacentHTML('beforeend', html);
 
-      dayTime.insertAdjacentHTML('beforeend', html);
-
-      // tempMax.
-    });
   if (hour > '17') {
     dayTime.classList.add('night');
     dayTime.classList.remove('daytime');
   }
+}
+
+function renderError(msg) {
+  main.insertAdjacentText('beforeend', msg);
+}
+
+function getUserLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(displayWeather);
+  } else {
+    alert('The browser does not support geolocation');
+  }
+}
+
+function displayWeather(position) {
+  const { latitude, longitude } = position.coords;
+
+  // const latPost = position.coords.latitude;
+  // const longPost = position.coords.longitude;
+
+  fetch(`${baseURL}lat=${latitude}&lon=${longitude}&appid=${apiKey}`)
+    .then((res) => res.json())
+    .then((data) => {
+      JSON.stringify(data);
+      console.log(data);
+      renderDetail(data);
+    })
+    .catch((err) => {
+      console.log(err);
+      renderError(`Something went wrong. ${err.message}`);
+    })
+    .finally(() => {
+      main.style.opacity = 1;
+    });
 }
 
 getUserLocation();
